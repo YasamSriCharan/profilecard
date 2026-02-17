@@ -1,11 +1,11 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  line-height: 1.6;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #1f1f1f;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,56 +13,95 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ------- Desktop Layout Container ------- */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+/* Main desktop container */
+#app, main, .container {
+  max-width: 900px;        /* desktop sweet spot */
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 18px;
+
+  background-color: #2a2a2a;  /* elevated card feel */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ------- Typography ------- */
+h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  max-width: 60ch;
+  margin: 0 auto 1.5rem;
+  font-size: 1.15rem;
+}
+
+/* ------- Links ------- */
 a {
   font-weight: 500;
   color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
 }
+
 a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
+/* ------- Buttons ------- */
 button {
-  border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  border-radius: 10px;
+
+  padding: 0.7em 1.8em;
+  font-size: 1.1rem;
+
+  background-color: #333;
   cursor: pointer;
-  transition: border-color 0.25s;
+
+  transition: all 0.25s ease-in-out;
 }
+
 button:hover {
   border-color: #646cff;
+  transform: translateY(-2px);
 }
-button:focus,
-button:focus-visible {
+
+button:focus {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* ------- Light Mode ------- */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
+
+  #app, main, .container {
+    background-color: #f5f5f5;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+
   a:hover {
     color: #747bff;
   }
+
   button {
-    background-color: #f9f9f9;
+    background-color: #eaeaea;
   }
 }
